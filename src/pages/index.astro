@@ -1,16 +1,46 @@
 ---
+import Base from "../layouts/Base.astro";
+import { Icon } from 'astro-icon/components'
+import {slide} from "astro:transitions";
 
+const image_dimension = 64;
+const helloChars = "Hello There!!!".split("")
 ---
+<Base>
+    <div id="overlay" class="w-full h-full flex flex-col">
+        <div id="welcomeContainer"
+             class="mt-14 w-full text-center font-extrabold text-xl sm:text-3xl md:text-5xl lg:text-7xl text-white underline transition-all duration-500 ease-in decoration-transparent hover:decoration-amber-400 decoration-4 underline-offset-8">
+            {helloChars.map(x => (
+                    <span class="underline hover:text-amber-400 decoration-transparent hover:decoration-emerald-400 decoration-[6px] underline-offset-8">{x}</span>))}
+        </div>
+        <div class="mt-7 px-12 sm:px-32 md:px-72 font-extrabold text-white hover:bg-violet-700 p-2">
+            <p>Who are we?</p>
+            <div class="group flex flex-row gap-4 w-full p-2">
+                <Icon name="solar:user-hand-up-bold" class="hidden md:block min-w-fit min-h-fit h-full self-center text-emerald-300" width={image_dimension} height={image_dimension} />
+                <p class="font-extralight text-justify">A student-driven community at Deakin University, GIFT City, India
+                    that aims to enhance the coding and analytics culture across the entire institution. We plan to achieve
+                    this by offering regular demonstrations covering topics ranging from beginner to advanced levels.</p>
+            </div>
+        </div>
+        <div class="mt-7 px-12 sm:px-32 md:px-72 font-extrabold text-white hover:bg-fuchsia-700 p-2">
+            <p>What is our Aim?</p>
+            <div class="group flex flex-row gap-4 w-full p-2">
+                <Icon name="solar:target-bold-duotone" class="hidden md:block min-w-fit min-h-fit h-full self-center text-rose-300" width={image_dimension} height={image_dimension} />
+                <p class="font-extralight text-justify w-full">
+                    To elevate the coding and analytics environment and practices across our campus.
+                </p>
+            </div>
+        </div>
+        <div class="mt-7 px-12 sm:px-32 md:px-72 font-extrabold text-white hover:bg-indigo-700 p-2">
+            <p>Why are we here?</p>
+            <div class="group flex flex-row gap-4 w-full p-2">
+                <Icon name="solar:map-arrow-down-bold-duotone" class="hidden md:block min-w-fit min-h-fit h-full self-center text-orange-600" width={image_dimension} height={image_dimension} />
+                <p class="font-extralight text-justify w-full">
+                    To develop a community, making significant contributions across diverse domains and uphold the integrity
+                    of Deakin University, GIFT City, India as a technical institution.
+                </p>
+            </div>
+        </div>
+    </div>
+</Base>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>

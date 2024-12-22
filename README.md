@@ -45,3 +45,34 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Other Documentation 
+
+
+### Skill Icons
+Use this link to Learn more about this icon set: [Reference](https://icones.js.org/collection/skill-icons)
+#### Installation
+
+`npm install @iconify-json/skill-icons`
+
+#### Usage 
+> `<Icon name="skill-icons:golang"/>`
+
+
+### Solar
+Use this link to Learn more about this icon set: [Reference](https://icones.js.org/collection/solar)
+#### Installation
+
+`npm install @iconify-json/solar`
+
+#### Usage
+> `<Icon name="solar:user-hand-up-bold"/>`
+
+### Solar
+Use this link to Learn more about this icon set: [Reference](https://icones.js.org/collection/solar)
+#### Installation
+
+`npm install @iconify-json/tdesign`
+
+#### Usage
+> `<Icon name="tdesign:map-aiming"/>`

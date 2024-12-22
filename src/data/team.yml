@@ -1,0 +1,78 @@
+# <img src="/images/team/placeholder.png">
+# <p class="label">🖥️ Programmer 🖥️</p>
+# <p class="label">🔌 Electrician 🔌</p>
+# <p class="label">🔧 Mechanic 🔧</p>
+# <p class="label">🚧 Safety 🚧</p>
+# <p class="label">⚙️ Member ⚙️</p>
+# <p class="label">⭐️ Team Captain ⭐️</p>
+# <h5>Name 'year</h5>
+# <p>Name is a first year subject.</p>
+
+team:
+  - name: "Hridoy Sankar Dutta"
+    year: ""
+    role: "⭐️ Faculty representative ⭐️"
+    image: "/public/socials/member_images/hsd.jpg"
+    bio: "Hridoy is the faculty representative of this club."
+
+  - name: "Shounak Ravi Bhalerao"
+    year: "'26"
+    role: "Lead Member"
+    image: "/public/socials/member_images/srb.png"
+    bio: "Hello There! Nice to meet you!"
+
+  # Student
+  - name: "Shreyas N M"
+    year: "'26"
+    role: "Member"
+    image: "/public/socials/member_images/snm.png"
+    bio: "Hello There! Nice to meet you!"
+
+  # Student
+  - name: "Parth Sirohi"
+    year: "26"
+    role: "Student Representative"
+    image: "/public/socials/member_images/ps.png"
+    bio: "I am the Student Representative of the club"
+
+  # Student
+  - name: "Jividha Kishor Parate"
+    year: "26"
+    role: "Member"
+    image: "/public/socials/member_images/jvp.jpg"
+    bio: "Hello There! Nice to meet you!"
+
+  # Student
+  - name: "Krinali Shah"
+    year: "26"
+    role: "Member"
+    image: "/public/socials/member_images/ks.png"
+    bio: "Hello There! Nice to meet you!"
+
+  # Student
+  - name: "Princy jain"
+    year: "'26'"
+    role: "Member"
+    image: "/public/socials/member_images/pj.jpg"
+    bio: "Hello There! Nice to meet you!"
+
+  #Student
+  - name: "Rajvirsinh Rathod"
+    year: "26"
+    role: "Member"
+    image: "/public/socials/member_images/rvr.png"
+    bio: "A boy who is easy to say HELLO but difficult to say GOODBYE!"
+
+    #Student
+  - name: "Satya Vaibhav"
+    year: "26"
+    role: "Member"
+    image: "/public/socials/member_images/svk.webp"
+    bio: "Stay Anonymous in the Web!!"
+
+    #Student
+  - name: "Khushi Patel"
+    year: "26"
+    role: "Member"
+    image: "/public/socials/member_images/kp.jpg"
+    bio: "Hello There! Nice to meet you!"

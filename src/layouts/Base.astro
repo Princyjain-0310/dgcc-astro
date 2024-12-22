@@ -1,0 +1,30 @@
+---
+import NavigationBar from "../components/NavigationBar.astro";
+import {ClientRouter} from 'astro:transitions';
+
+const bg_video_url = '/socials/week0-bw.mp4'
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deakin Gift City Coding Club</title>
+    <ClientRouter />
+</head>
+<body class="flex flex-col h-screen w-screen">
+<!--Add Video IN Background + Filter -->
+<video class="fixed right-0 top-0 w-full h-full opacity-15 object-cover" style="clip-path: none" autoplay loop muted
+       playsinline data-video transition:persist>
+    <source src={bg_video_url} type="video/mp4">
+</video>
+<div id="filter" class="absolute inset-0 w-full h-full mix-blend-exclusion bg-black"></div>
+<!--Main Content-->
+<div class="fixed w-full h-full group cursor-pointer overflow-y-auto overflow-x-hidden">
+    <NavigationBar/>
+    <div class="w-full h-full min-w-full min-h-full" transition:animate="slide" transition:name="slot">
+        <slot>DEFAULT TEXT</slot>
+    </div>
+</div>
+</body>
+</html>

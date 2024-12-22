@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'helveticaNeueLight';
+    src: url('/fonts/HelveticaNeue-Medium-11.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+/* Register your custom font family and tell the browser where to find it. */
+@font-face {
+    font-family: 'NikeFuturaND';
+    src: url('/fonts/nike_futura_cn-xb.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
