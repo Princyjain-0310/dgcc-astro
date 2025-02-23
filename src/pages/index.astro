@@ -1,13 +1,12 @@
 ---
 import Base from "../layouts/Base.astro";
 import { Icon } from 'astro-icon/components'
-import {slide} from "astro:transitions";
 
 const image_dimension = 64;
 const helloChars = "Hello There!!!".split("")
 ---
 <Base>
-    <div id="overlay" class="w-full h-full flex flex-col">
+    <div id="overlay" class="w-full h-full" transition:animate="fade" transition:name="main-content">
         <div id="welcomeContainer"
              class="mt-14 w-full text-center font-extrabold text-xl sm:text-3xl md:text-5xl lg:text-7xl text-white underline transition-all duration-500 ease-in decoration-transparent hover:decoration-amber-400 decoration-4 underline-offset-8">
             {helloChars.map(x => (
