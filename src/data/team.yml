@@ -18,7 +18,7 @@ team:
   - name: "Shounak Ravi Bhalerao"
     year: "'26"
     role: "Lead Member"
-    image: "/public/socials/member_images/srb.jpg"
+    image: "dgcc-astro/public/socials/member_images/srb.jpg"
     bio: "Hello There! Nice to meet you!"
 
   # Student
