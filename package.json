@@ -15,6 +15,7 @@
     "@iconify-json/tdesign": "^1.2.6",
     "astro": "^5.1.0",
     "astro-icon": "^1.1.4",
+    "cheerio": "^1.0.0",
     "tailwindcss": "^3.4.17"
   }
 }

@@ -1,0 +1,59 @@
+---
+import Base from "../layouts/Base.astro";
+import * as cheerio from 'cheerio';
+
+let cleanText = (str: string | null) => (str == null)
+    ? str
+    : str.replaceAll("\n", "").trim().replaceAll("\t", "");
+
+const scoreBoard = await fetch("https://www.ratatype.com/groups/5375404/en_new/")
+    .then(response => response.text());
+
+let dictionary: any[] = [];
+const $ = cheerio.load(scoreBoard);
+$('.js-member-row > .flex').each((i, elem) => {
+    const element = $(elem);
+    // Remove the second child if it exists
+    if (element.children().length > 1) {
+        element.children().eq(1).remove();
+    }
+    dictionary.push({
+        id: cleanText(element.children().eq(0).text()),
+        name: cleanText(element.children().eq(1).text()),
+        typingSpeed: cleanText(element.children().eq(2).children().eq(0).text()),
+        percentage: cleanText(element.children().eq(2).children().eq(1).text()),
+    });
+});
+---
+<Base>
+    <div id="overlay" class="w-full h-full" transition:animate="fade" transition:name="main-content">
+        <div class="sm:hidden w-full flex justify-end px-5">
+            <div class="text-lg bg-red-50 rounded-b-md px-1">Typing Leeader Board</div>
+        </div>
+        <div class="mt-14 w-full text-center font-extrabold text-xl sm:text-3xl md:text-5xl lg:text-7xl text-white underline transition-all duration-500 ease-in decoration-transparent hover:decoration-amber-400 decoration-4 underline-offset-8 pb-5">
+            Typing Test Leader Board
+        </div>
+        <div class="m-5 rounded-xl border-2 border-violet-700 overflow-clip">
+            <table class="w-full min-w-full text-center">
+                <thead class="bg-violet-700 text-white">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Typing Speed</th>
+                    <th>Accuracy</th>
+                </tr>
+                </thead>
+                <tbody>
+                {dictionary.map(user => (
+                        <tr class="text-white hover:bg-violet-700 focus:bg-amber-500" tabindex="-1">
+                            <td>{user.id}</td>
+                            <td class="text-left capitalize">{user.name}</td>
+                            <td>{user.typingSpeed}</td>
+                            <td>{user.percentage}</td>
+                        </tr>))}
+                </tbody>
+            </table>
+        </div>
+        <div class="pt-3"></div>
+    </div>
+</Base>
