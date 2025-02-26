@@ -1,0 +1,18 @@
+---
+import {getCollection, render} from 'astro:content';
+import WorkshopDetails from "../../layouts/WorkshopDetails.astro";
+import {workshops} from "../../collection"
+
+export async function getStaticPaths() {
+    return workshops.map(workshop => ({
+        params: {slug: workshop.slug},
+        props: {workshop},
+    }));
+}
+
+const {workshop} = Astro.props;
+const {Content} = await workshop.render();
+---
+<WorkshopDetails>
+    <Content/>
+</WorkshopDetails>

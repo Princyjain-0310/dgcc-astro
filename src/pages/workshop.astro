@@ -1,0 +1,90 @@
+---
+import Base from "../layouts/Base.astro";
+import {Image} from 'astro:assets'
+import {getCollection} from "astro:content";
+import {workshops} from "../collection";
+
+const workshop_list = workshops
+    .map(x => x.data)
+---
+<Base>
+    <div class="min-h-screen text-white">
+        <main class="max-w-7xl mx-auto px-4 py-12">
+            {/* Header */}
+            <div class="text-center mb-16">
+                <h1 class="text-6xl font-bold mb-4">DGCC Achievements</h1>
+                <p class="text-xl italic">Explore the past sessions and workshops we have conducted at DGCC.</p>
+            </div>
+            {/* Upcoming Sessions */}
+            <section>
+                <h2 class="text-4xl font-bold mb-8">Upcoming Sessions</h2>
+                <div class="space-y-2">
+                    {workshop_list.map((workshop) => (
+                            <div class="flex items-center text-white p-4 rounded hover:bg-amber-400 hover:bg-opacity-30">
+                                <div class="pr-5"><img src="coding_theme.gif" class="w-32 h-32" alt="n/a"/></div>
+                                <div class="">
+                                    <div class="pb-1">
+                                        <span class="text-3xl font-bold">{workshop.title}</span>
+                                    </div>
+                                    <div class="col-span-full text-wrap pb-5">
+                                        <span class="">{workshop.description}</span>
+                                    </div>
+                                    <div class="">
+                                        <span class="font-bold pr-1">🗓️: </span>
+                                        <span class="">{workshop.date}</span>
+                                    </div>
+                                    <div class="">
+                                        <span class="font-bold pr-1">🏢: </span>
+                                        <span class="">{workshop.location}</span>
+                                    </div>
+                                    <div class="">
+                                        <span class="font-bold pr-1">🕰️: </span>
+                                        <span class="">{workshop.time}</span>
+                                    </div>
+                                </div>
+
+                                <!--<button class="text-black  p-2 rounded">🔔</button>-->
+                            </div>
+                    ))}
+                </div>
+            </section>
+            <hr class="my-4"/>
+            {/* Workshops */}
+            <section class="mb-20">
+                <h2 class="text-4xl font-bold mb-8">Archived Workshops</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="space-y-4">
+                        <Image
+                                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DGCC_Achievement_Page-IWNq3rUhm4ZjINvnSBhLyI1Gmd1viz.png"
+                                alt="Web Scraping"
+                                width={400}
+                                height={300}
+                                class="rounded-lg w-full"
+                        />
+                        <h3 class="text-2xl font-bold">Web Scraping</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <Image
+                                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DGCC_Achievement_Page-IWNq3rUhm4ZjINvnSBhLyI1Gmd1viz.png"
+                                alt="SQL"
+                                width={400}
+                                height={300}
+                                class="rounded-lg w-full"
+                        />
+                        <h3 class="text-2xl font-bold">SQL</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <Image
+                                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DGCC_Achievement_Page-IWNq3rUhm4ZjINvnSBhLyI1Gmd1viz.png"
+                                alt="Database and PowerBI"
+                                width={400}
+                                height={300}
+                                class="rounded-lg w-full"
+                        />
+                        <h3 class="text-2xl font-bold">Database and PowerBI</h3>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</Base>

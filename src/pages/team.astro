@@ -2,7 +2,6 @@
 import Base from "../layouts/Base.astro";
 import {getCollection} from "astro:content";
 import TeamMembers from "../components/TeamMembers.astro";
-import {slide} from "astro:transitions";
 
 const team_data = (await getCollection("team_data_schema"))
     .map(x => x.data)
@@ -20,7 +19,8 @@ const team_data = (await getCollection("team_data_schema"))
             <p class="w-full text-center text-3xl my-5">Mentor/s</p>
             <div class="md:grid md:grid-cols-2 lg:grid-cols-6 gap-8 justify-center">
                 {
-                    team_data.filter(x => x.role !== "Member").map(x => <TeamMembers data={x} />)
+                    team_data.filter(x => x.role !== "Member").map(x =>
+                            <TeamMembers data={x}/>)
                 }
             </div>
         </div>
@@ -28,7 +28,8 @@ const team_data = (await getCollection("team_data_schema"))
             <p class="w-full text-center text-3xl my-5">Members</p>
             <div class="md:grid md:grid-cols-2 lg:grid-cols-6 gap-8 justify-center">
                 {
-                    team_data.filter(x => x.role === "Member").map(x => <TeamMembers data={x} />)
+                    team_data.filter(x => x.role === "Member").map(x =>
+                            <TeamMembers data={x}/>)
                 }
             </div>
         </div>
