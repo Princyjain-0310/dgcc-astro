@@ -7,6 +7,4 @@ calenderLink: "https://www.google.com"
 speaker: "Shounak Bhalerao"
 location: "GC1.115"
 ---
-# Some Marketing Promo
-
-This is the best product!
+# This is Page for Big Dat
